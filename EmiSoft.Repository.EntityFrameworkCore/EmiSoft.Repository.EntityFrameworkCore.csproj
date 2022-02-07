@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<Company>EmiSoft</Company>
+		<Authors>eminovperviz</Authors>
+		<Description>Generic EF Repository , extendend DbContext </Description>
+		<PackageProjectUrl>https://github.com/eminovperviz/EmifSoft.Packages</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/eminovperviz/EmifSoft.Packages</RepositoryUrl>
+		<PackageTags>repository, ef core repository, generic repository, dbcontext, unit of work</PackageTags>
+		<NeutralLanguage>en</NeutralLanguage>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<PackageReleaseNotes>EfRepository, UnitOfWork implementation and abstractions</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\.editorconfig" Link=".editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EmiSoft.Domain" Version="1.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+	</ItemGroup>
+
+</Project>

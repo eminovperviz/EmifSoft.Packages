@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>eminovperviz</Authors>
+    <Company>EmiSoft</Company>
+    <Description>Abstraction on domain models, IAuditEntity, IBaseEntity,IDomainEventEntity</Description>
+    <PackageProjectUrl>https://github.com/eminovperviz/EmifSoft.Packages</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/eminovperviz/EmifSoft.Packages</RepositoryUrl>
+    <PackageTags>entity,domain,auditable entity</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Base domain models implemented</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+  </ItemGroup>
+
+</Project>
