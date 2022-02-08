@@ -4,11 +4,11 @@ namespace EmiSoft.Repository.EntityFrameworkCore.Abstractions;
 
 /// <summary>
 /// <para>
-/// A <see cref="IRepository{T}" /> can be used to query and save instances of <typeparamref name="T" />.
+/// A <see cref="IRepositoryBase{T}" /> can be used to query and save instances of <typeparamref name="T" />.
 /// </para>
 /// </summary>
 /// <typeparam name="T">The type of entity being operated on by this repository.</typeparam>
-public interface IRepository<T> : IReadRepository<T> where T : class
+public interface IRepositoryBase<T>  where T : class
 {
     Task AddAsync(T entity, bool isCommit = true, CancellationToken cancellationToken = default);
     Task AddRangeAsync(IEnumerable<T> entities, bool isCommit = true);

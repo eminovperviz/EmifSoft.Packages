@@ -4,11 +4,11 @@ namespace EmiSoft.Repository.EntityFrameworkCore.Abstractions;
 
 /// <summary>
 /// <para>
-/// A <see cref="IRepositoryBase{T}" /> can be used to query instances of <typeparamref name="T" />.
+/// A <see cref="IReadRepositoryBase{T}" /> can be used to query instances of <typeparamref name="T" />.
 /// </para>
 /// </summary>
 /// <typeparam name="T">The type of entity being operated on by this repository.</typeparam>
-public interface IReadRepository<T> where T : class
+public interface IReadRepositoryBase<T> where T : class
 {
     IQueryable<T> Table { get; }
     IQueryable<T> TableNoTracking { get; }

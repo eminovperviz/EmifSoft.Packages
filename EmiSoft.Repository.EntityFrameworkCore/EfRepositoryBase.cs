@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace EmiSoft.Repository.EntityFrameworkCore;
 
-public class EfRepository<T> : IRepository<T> where T : BaseEntity<int>
+public class EfRepositoryBase<T> : IRepositoryBase<T>, IReadRepositoryBase<T> where T : BaseEntity<int>
 {
     public int Culture
     {
@@ -18,12 +18,12 @@ public class EfRepository<T> : IRepository<T> where T : BaseEntity<int>
         }
     }
 
-    private readonly ApplicationDbContext _context;
+    private readonly DbContext _context;
     private DbSet<T> _dbSet;
     public virtual IQueryable<T> Table => _dbSet;
     public virtual IQueryable<T> TableNoTracking => _dbSet.AsNoTracking();
 
-    public EfRepository(ApplicationDbContext context)
+    public EfRepositoryBase(DbContext context)
     {
         _context = context;
         _dbSet = context.Set<T>();

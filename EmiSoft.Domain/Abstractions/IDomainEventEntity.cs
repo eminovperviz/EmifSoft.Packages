@@ -1,8 +1,6 @@
-﻿using EmiSoft.Domain.Events;
-
-namespace EmiSoft.Domain.Abstractions;
+﻿namespace EmiSoft.Domain.Abstractions;
 
 public interface IDomainEventEntity
 {
-    List<BaseDomainEvent> Events { get; set; }
+    List<IDomainEvent> Events { get; set; }
 }

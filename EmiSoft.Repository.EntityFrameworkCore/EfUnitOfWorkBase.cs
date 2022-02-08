@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmiSoft.Repository.EntityFrameworkCore;
 
-public class EfUnitOfWork : IUnitOfWork
+public class EfUnitOfWorkBase : IUnitOfWorkBase
 {
-    private readonly ApplicationDbContext _dbContext;
-    public EfUnitOfWork(ApplicationDbContext dbContext)
+    private readonly DbContext _dbContext;
+    public EfUnitOfWorkBase(DbContext dbContext)
     {
         _dbContext = dbContext;
     }

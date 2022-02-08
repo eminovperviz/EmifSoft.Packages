@@ -2,7 +2,7 @@
 
 namespace EmiSoft.Domain;
 
-public abstract class AuditableEntity<T> : BaseEntity<T>, IAuditableEntity
+public abstract class AuditableEntityBase<T> : EntityBase<T>, IAuditableEntity
 {
     public int CreatedBy { get; set; }
     public DateTime CreatedDate { get; set; }

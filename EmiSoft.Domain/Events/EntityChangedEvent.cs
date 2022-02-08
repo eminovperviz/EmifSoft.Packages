@@ -1,6 +1,6 @@
 ﻿namespace EmiSoft.Domain.Events;
 
-public class EntityChangedEvent<T> : BaseDomainEvent
+public class EntityChangedEvent<T> : DomainEventBase
 {
     public T Data { get; }
     public EntityChangedEvent(T data)

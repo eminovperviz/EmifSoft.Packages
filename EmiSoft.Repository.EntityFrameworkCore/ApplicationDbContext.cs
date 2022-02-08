@@ -16,14 +16,14 @@ public class ApplicationDbContext : DbContext
     public bool AuthenticationEnabled { get; private set; }
     public readonly IMediator? _mediator;
     public readonly IHttpContextAccessor? _httpContextAccessor;
-    private static readonly MethodInfo ConfigureGlobalFiltersMethodInfo = typeof(ApplicationDbContext).GetMethod(nameof(ConfigureGlobalFilters), BindingFlags.Instance | BindingFlags.NonPublic);
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IMediator? mediator) : base(options)
+    private static readonly MethodInfo ConfigureGlobalFiltersMethodInfo = typeof(DbContext).GetMethod(nameof(ConfigureGlobalFilters), BindingFlags.Instance | BindingFlags.NonPublic);
+    public ApplicationDbContext(DbContextOptions<DbContext> options, IMediator? mediator) : base(options)
     {
         ArgumentNullException.ThrowIfNull(mediator);
         _mediator = mediator;
     }
 
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IHttpContextAccessor httpContextAccessor, IMediator? mediator, bool authenticationEnabled = true) : base(options)
+    public ApplicationDbContext(DbContextOptions<DbContext> options, IHttpContextAccessor httpContextAccessor, IMediator? mediator, bool authenticationEnabled = true) : base(options)
     {
         ArgumentNullException.ThrowIfNull(httpContextAccessor);
         ArgumentNullException.ThrowIfNull(mediator);

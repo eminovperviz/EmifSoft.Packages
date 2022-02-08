@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EmiSoft.Domain;
 
-public abstract class BaseEntity<T> : BaseEntity, IEntity
+public abstract class EntityBase<T> : EntityBase, IEntity
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -12,7 +12,7 @@ public abstract class BaseEntity<T> : BaseEntity, IEntity
 }
 
 
-public class BaseEntity
+public class EntityBase
 {
 
 }

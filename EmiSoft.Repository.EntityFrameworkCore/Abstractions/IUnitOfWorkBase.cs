@@ -1,6 +1,6 @@
 ﻿namespace EmiSoft.Repository.EntityFrameworkCore.Abstractions;
 
-public interface IUnitOfWork
+public interface IUnitOfWorkBase
 {
     int Commit();
     Task<int> CommitAsync();
