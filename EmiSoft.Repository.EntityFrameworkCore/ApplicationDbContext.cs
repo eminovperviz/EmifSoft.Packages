@@ -14,17 +14,19 @@ namespace EmiSoft.Repository.EntityFrameworkCore;
 public class ApplicationDbContext : DbContext
 {
     public bool AuthenticationEnabled { get; private set; }
-    private readonly IMediator? _mediator;
-    private readonly IHttpContextAccessor? _httpContextAccessor;
+    public readonly IMediator? _mediator;
+    public readonly IHttpContextAccessor? _httpContextAccessor;
     private static readonly MethodInfo ConfigureGlobalFiltersMethodInfo = typeof(ApplicationDbContext).GetMethod(nameof(ConfigureGlobalFilters), BindingFlags.Instance | BindingFlags.NonPublic);
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IMediator? mediator) : base(options)
     {
-        ArgumentNullException.ThrowIfNull(nameof(mediator));
+        ArgumentNullException.ThrowIfNull(mediator);
         _mediator = mediator;
     }
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IHttpContextAccessor httpContextAccessor, IMediator? mediator, bool authenticationEnabled = true) : base(options)
     {
+        ArgumentNullException.ThrowIfNull(httpContextAccessor);
+        ArgumentNullException.ThrowIfNull(mediator);
         _httpContextAccessor = httpContextAccessor;
         _mediator = mediator;
         AuthenticationEnabled = authenticationEnabled;

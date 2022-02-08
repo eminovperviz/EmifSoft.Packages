@@ -18,6 +18,7 @@
 		<PackageReleaseNotes>EfRepository, UnitOfWork implementation and abstractions</PackageReleaseNotes>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
